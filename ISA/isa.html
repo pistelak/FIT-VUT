@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>isa</title>
+	</head>
+	<body>
+	<p><b>Společná část popisu:</b><br>
+Vytvořte komunikující aplikaci podle konkrétní vybrané specifikace
+pomocí síťové knihovny BSD sockets (pokud není ve variantě zadání
+uvedeno jinak). Projekt bude vypracován v jazyce C/C++, přeložitelný a
+spustitelný v prostředí systému Unixového typu (testováno bude na virtuálním počítači Linux/Ubuntu <a href="http://nes.fit.vutbr.cz/isa/ISA2014.ova">http://nes.fit.vutbr.cz/isa/ISA2014.ova</a>).&nbsp;<br>
+<ul><li>Vypracovaný projekt uložený v archívu .tar a se jménem xlogin00.tar odevzdejte elektronicky přes IS. Soubor nekomprimujte.</li><li><b>Termín odevzdání je 30.11.2014</b>. Odevzdání emailem po uplynutí termínu není možné. 
+</li><li>Odevzdaný projekt musí obsahovat 
+<ol><li>soubor se zdrojovým kódem (dodržujte jména souborů uvedená v konkrétním zadání) 
+</li><li>funkční <b>Makefile</b> pro překlad zdrojového souboru 
+</li><li>dokumentaci (soubor <b>manual.pdf</b>), která bude obsahovat 
+uvedení do
+problematiky, návrhu aplikace, popis implementace, základní informace o
+programu, návod na použití. V dokumentaci se očekává následující: 
+titulní strana, obsah, 
+logické strukturování textu, přehled nastudovaných informací z 
+literatury, popis zajímavějších pasáží implementace, použití vytvořených
+ programů a literatura.</li><li>soubor <b>README</b> obsahující krátký textový popis programu s případnými rozšířeními/omezeními, příklad spuštění a seznam odevzdaných souborů 
+</li><li>další požadované soubory podle konkrétního typu zadání </li></ol>
+</li><li>Pokud v projektu nestihnete implementovat všechny požadované
+vlastnosti, je nutné veškerá omezení jasně uvést v dokumentaci a v
+souboru README.
+</li><li>Co není v zadání jednoznačně uvedeno, můžete implementovat podle svého vlastního výběru. Zvolené řešení popište v dokumentaci.
+</li><li>Při řešení projektu respektujte zvyklosti zavedené v OS Unixového typu 
+(jako je například formát textového souboru).</li><li>Vytvořené programy by měly být použitelné a smysluplné, řádně komentované a formátované a členěné do funkcí a modulů. Program by měl obsahovat nápovědu informující uživatele o činnosti programu a jeho parametrech. Případné chyby budou intuitivně popisovány 
+uživateli.</li><li>Aplikace <b>nesmí v žádném případě</b> skončit s chybou SEGMENTATION FAULT ani jiným násilným systémovým ukončením (např. dělení nulou).</li><li>Pokud už přejímáte velmi krátké pasáže zdrojových kódů z různých tutoriálů či příkladů z 
+Internetu (ne mezi sebou), tak je nutné vyznačit tyto sekce a 
+jejich autory dle licenčních podmínek, kterými se distribuce daných 
+zdrojových kódů řídí. V případě nedodržení bude na projekt nahlíženo 
+jako na plagiát.
+</li><li>Konzultace k projektu podává vyučující, který zadání vypsal.</li><li><b>Před
+ odevzdáním zkontrolujte, zda jste dodrželi všechna jména souborů 
+požadovaná ve společné části zadání i v zadání pro konkrétní projekt. 
+Zkontrolujte, že je projekt přeložitelný.</b></li></ul><b>Hodnocení projektu</b>: 
+<ul><li><b>Maximální počet bodů za projekt je 15 bodů.</b>
+</li><li>Příklad kriterií pro hodnocení projektů: 
+<ul><li>nepřehledný, nekomentovaný zdrojový text: až -7 bodů
+</li><li>nefunkční či chybějící Makefile: až -4 body 
+</li><li>nekvalitní či chybějící dokumentace: až -5 bodů 
+</li><li>nedodržení formátu vstupu/výstupu či konfigurace: -3 body 
+</li><li>odevzdaný soubor nelze přeložit, spustit a odzkoušet: 0 bodů
+</li><li>odevzdáno po termínu: 0 bodů 
+</li><li>nedodržení zadání: 0 bodů 
+</li><li>nefunkční kód: 0 bodů 
+</li><li>opsáno: 0 bodů (pro všechny, kdo mají stejný kód)</li></ul>
+</li></ul>
+
+<br><br>
+<b>Instrukce pro spuštění virtuálního stroje:</b><br><br>Virtuální stroj byl vytvořen programem VirtualBox. Pro import a spuštění ve VMWare postupujte podle návodů pro import virtuálních strojů vytvořených programem VirtualBox. Pro spuštění systému je potřeba, aby CPU hostitelského PC mohlo vykonávat instrukce pro virtualizaci (VT-x, AMD-V apod.): Nastavení -&gt; Systém -&gt; Akcelerace (je možné, že bude potřeba na konkrétních strojích povolit HW virtualizaci v BIOSu).<br><p><b>Popis varianty:</b><br>Napište program <i>httphdrs</i>, který bude monitorovat hlavičky HTTP. Program bude umět monitorovat jak provoz na zadaném síťovém rozhraní (specifikovaném jeho jménem), tak procházet uložený provoz ve formátu pcap. Program při spuštění získá seznam hlaviček, které bude vyhledávat v dotazech klienta (HTTP Request). Nalezené hlavičky bude program ukládat do XML souboru, jehož formát je specifikován níže. Program bude ukládat pouze hlavičky zasílané klientem.<br><br>Při 
+vytváření programu je povoleno použít hlavičkové soubory pro práci se 
+schránkami a další obvyklé funkce používané v síťovém prostředí (jako je 
+netinet/*, sys/*, arpa/* apod.), knihovnu pro práci s vlákny (pthread), 
+signály, časem, stejně jako standardní knihovnu jazyka C, C++ a STL. Z knihoven třetích stran je možné použít knihovnu pro práci s XML libxml2 (http://www.xmlsoft.org/) a pro práci se síťovýmy provozem libpcap (http://www.tcpdump.org/). 
+Jiné knihovny jazyka C/C++ nejsou povoleny.<br><br>Program je možné implementovat v jazyce python včetně The Python Standard Library. Je povoleno využívat knihovny scapy (http://www.secdev.org/projects/scapy/) a IPy (https://pypi.python.org/pypi/IPy/).<br><br><b>Spuštění aplikace</b><br><br>Použití: <i>httphdrs {-f | -i } zdroj [-H http_hlavička1,http_hlavička</i>2,<i>http_hlavičkan] [-p 80,8080] -o výstupnísoubor</i><br><br>Program očekává použití právě jednoho z parametrů <i>-f</i> a <i>-i</i>. Při použití parametru <i>-f</i> bude program pracovat se soubory ve formátu pcap. Při použití parametru <i>-i</i> bude program průběžně zpracovávat provoz procházející určenými rozhraními. Za parametrem bezprostředně následuje jméno zdroje dat, tedy jméno souboru, či název rozhraní. Při využití parametu -i program poběží v <i>nekonečné</i> smyčce a bude zpracovávat detekovaný provoz. K ukončení 
+programu dojde po přijetí signálů SIGTERM, SIGQUIT, nebo SIGINT.<br><br>Volitelný parametr -H 
+slouží ke specifikaci sledovaných hlaviček HTTP. Pokud není specifikován, bude program uvažovat následující seznam: <i>User-Agent,Accept,Accept-Encoding,Accept-Language</i>. Jednotlivé hlavičky jsou od sebe odděleny čárkami.<br><br>Volitelný parametr <i>-p</i> bude specifikovat seznam portů TCP serverů HTTP, ve kterých se bude vyhledávat. Výchozí je port č. 80.<br><br>Povinný parametr <i>-o</i> specifikuje název výstupního souboru. Pokud již existuje, může být jeho obsah přepsán.<br><br>Pořadí parametrů je libovolné.<br><br><b>Výstup aplikace</b><br><br>Program vytvoří výstupní soubor ve formátu XML obsahující databázi nalezených hlaviček HTTP. Výstupní soubor bude obsahovat unikátní uzel pro každou identifikovanou adresu klienta HTTP. Pro každé spojení bude uloženo číslo použitého portu TCP (na straně klienta), a obsah zjištěných sledovaných hlaviček.<br><br>Všechny chybové výpisy vypisujte na standardní chybový výstup.<br><br>Výstup aplikace bude splňovat následující DTD:<br><br><tt>&lt;!--Hlavní tag--&gt;<br>&lt;!ELEMENT httphdrs (ip*)&gt;<br><br>&lt;!--Identifikovaná adresa klienta HTTP--&gt;<br>&lt;!ELEMENT ip (connection+)&gt;<br>&lt;!ATTLIST ip<br>&nbsp; &lt;!-- String obsahující IP adresu klienta --&gt;<br>&nbsp; addr CDATA #REQUIRED<br>&gt;<br><br>&lt;!-- Identifikované spojení z dané adresy --&gt;<br>&lt;!ELEMENT connection (header*)&gt;<br>&lt;!ATTLIST connection<br>&nbsp; &lt;!-- String obsahující číslo portu TCP klienta --&gt;<br>&nbsp; port int #REQUIRED<br>&gt;<br><br>&lt;!-- Nalezené hlavičky --&gt;<br>&lt;!ELEMENT header EMPTY&gt;<br>&lt;!ATTLIST header<br>&nbsp; &lt;!-- Jméno hlavičky --&gt;<br>&nbsp; name CDATA #REQUIRED<br>&nbsp; &lt;!-- Nalezená hodnota --&gt;<br>&nbsp; value CDATA #REQUIRED<br>&gt;</tt><br><br>
+<b>Příklad výstupu aplikace</b><br><br><tt>&lt;httphdrs&gt;<br>&nbsp; &lt;ip addr=&quot;192.168.1.1&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;connection port=&quot;12345&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;User-Agent&quot; value=&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept&quot; value=&quot;*/*&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept-Encoding&quot; value=&quot;gzip,deflate,sdch&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept-Language&quot; value=&quot;cs-CZ,cs;q=0.8&quot; /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/connection&gt;<br>&nbsp;&nbsp;&nbsp; &lt;connection port=&quot;12345&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;User-Agent&quot; value=&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept&quot; value=&quot;*/*&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept-Encoding&quot; value=&quot;gzip,deflate,sdch&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept-Language&quot; value=&quot;cs-CZ,cs;q=0.8&quot; /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/connection&gt;<br>&nbsp; &lt;/ip&gt;<br><br>&nbsp; &lt;ip addr=&quot;2001:db8::1&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;connection port=&quot;12345&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Googlebot/2.1 (+http://www.googlebot.com/bot.html)&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept&quot; value=&quot;*/*&quot; /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/connection&gt;<br>&nbsp;&nbsp;&nbsp; &lt;connection port=&quot;12345&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &lt;header name=&quot;User-Agent&quot; value=&quot;Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.13)
+ Gecko/20100916 Iceape/2.0.8&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept&quot;
+ value=&quot;text/html&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept-Encoding&quot;
+ value=&quot;gzip&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;header name=&quot;Accept-Language&quot;
+ value=&quot;en-us&quot; /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/connection&gt;<br>&nbsp;
+ &lt;/ip&gt;<br>&lt;/httphdrs&gt;</tt><br><br><b>Testování</b><br><br>Testování projektu bude
+ probíhat v prostředí virtuálního počítače dostupném na <a href="http://nes.fit.vutbr.cz/isa/ISA2014.ova">http://nes.fit.vutbr.cz/isa/ISA2014.ova</a>.<br><br>Pro spojení TCP, která nepřenáší protokol HTTP, není výstup pro dané spojení&nbsp; definován. Tzn. pokud se nebude jednat o protokol HTTP, ale váš program daný protokol rozpozná jako HTTP a do XML uloží jakékoliv informace o spojení, nebude to mít negativní vliv na hodnocení. Program však nesmí spadnout a musí zpracovat ostatní spojení korektně. Není vyžadována rekonstrukce proudů TCP z jednotlivých paketů.<br><br>Pokud byste se rozhodli problematiku zmiňovanou v předchozím odstavci řešit, bude na takový kód pohlíženo jako na rozšíření. Nezapomeňte se o jakémkoliv rozšíření zmínit v souboru README, v nápovědě a v dokumentaci.<br>
+
+<br><b>Doporučená literatura</b><br>
+
+<ul>
+<li><a href="http://tools.ietf.org/html/rfc7230">RFC 7230</a>, <a href="http://tools.ietf.org/html/rfc7231">RFC 7231</a></li>
+<li><a href="https://panopticlick.eff.org/">Panopticlick</a></li>
+</ul>	
+	</body>
+</html>
