@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project fitkitversion="1.0" outputprefix="voltmetr">
+
+	<!--  Project description -->
+	<name>VGAvoltmetr</name>
+	<author>Radek Pistelak</author>
+	<authoremail>xpiste04@stud.fit.vutbr.cz</authoremail>
+	<revision>20141210</revision>
+    <description>Umozni aby FITkit fungoval jako jednoduchy voltmetr - vyuziva AD prevodnik. Vysledek zobrazuje na VGA displeji jednoduchou grafikou.</description>
+
+    <!--  MCU part -->
+    	<mcu>         
+	<include>mcu/libs/lcd/package.xml</include>
+		<file>adc.c</file>
+		<file>vga_block.c</file>
+		<files>main.c</files>
+	</mcu>
+
+	<!-- FPGA part -->
+	<fpga architecture="pc">
+        <include>fpga/ctrls/spi/package.xml</include>
+        <include>fpga/ctrls/vga/package.xml</include>
+        <include>fpga/ctrls/lcd/package.xml</include>
+		<file>top.vhd</file>
+	</fpga>
+
+</project>
